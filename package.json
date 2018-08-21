@@ -28,9 +28,10 @@
     "test": "npm run test-core && npm run test-browser",
     "test-watch": "npm run pretest && testem dev -R dot",
     "pretest-dev": "npm run pretest",
-    "test-dev": "testem -l Chrome",
+    "test-dev": "testem -l Firefox",
     "sourcemap": "sourcemap-lookup",
-    "server": "webpack-dev-server"
+    "server": "webpack-dev-server",
+    "build": "webpack"
   },
   "main": "src/npm-main.js",
   "dependencies": {

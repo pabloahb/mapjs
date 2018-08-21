@@ -8,10 +8,10 @@
         "specs/**/*.js"
   ],
 	"before_tests": "webpack --config webpack.testem.config.js",
-	"launch_in_dev": ["Chrome"],
-	"launch_in_ci": ["Chrome"],
+	"launch_in_dev": ["Firefox"],
+	"launch_in_ci": ["Firefox"],
 	"browser_args": {
-	 "Chrome": [
+	 "Firefox": [
 			"--auto-open-devtools-for-tabs"
 		]
 	},

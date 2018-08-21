@@ -9,7 +9,7 @@ const MAPJS = require('../src/npm-main'),
 		let domMapController = false;
 		const container = jQuery('#container'),
 			idea = content(testMap),
-			touchEnabled = false,
+			touchEnabled = true,
 			mapModel = new MAPJS.MapModel([]),
 			layoutThemeStyle = function (themeJson) {
 				const themeCSS = themeJson && new MAPJS.ThemeProcessor().process(themeJson).css;
@@ -38,7 +38,7 @@ const MAPJS = require('../src/npm-main'),
 				});
 			});
 		};
-		window.onerror = window.alert;
+		window.onerror = console.log;
 		window.jQuery = jQuery;
 
 		container.domMapWidget(console, mapModel, touchEnabled);

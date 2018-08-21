@@ -173,6 +173,23 @@ module.exports = function DomMapController(mapModel, stageElement, touchEnabled,
 					x: dropPosition.pageX - vpOffset.left,
 					y: dropPosition.pageY -  vpOffset.top
 				};
+				if(result.x<0)
+				{
+					result.x=0;
+				}
+				if(result.y<0)
+				{
+					result.y=0;
+				}
+				if(result.x>viewPort.innerWidth())
+				{
+					result.x=viewPort.innerWidth();
+				}
+				if(result.y>viewPort.innerHeight())
+				{
+					result.y=viewPort.innerHeight();
+				}
+
 				if (result.x >= 0 && result.x <= viewPort.innerWidth() && result.y >= 0 && result.y <= viewPort.innerHeight()) {
 					return result;
 				}
