@@ -6,9 +6,18 @@ const MAPJS = require('../src/npm-main'),
 	content = MAPJS.content,
 	init = function () {
 		'use strict';
+		var myMap;
+		if(window.startupMap)
+		{
+			myMap=window.startupMap;
+		}
+		else
+		{
+			myMap=testMap;
+		}
 		let domMapController = false;
 		const container = jQuery('#container'),
-			idea = content(testMap),
+			idea = content(myMap),
 			touchEnabled = true,
 			mapModel = new MAPJS.MapModel([]),
 			layoutThemeStyle = function (themeJson) {
@@ -59,6 +68,7 @@ const MAPJS = require('../src/npm-main'),
 
 
 		jQuery('#linkEditWidget').linkEditWidget(mapModel);
+		mapModel.content=content;
 		window.mapModel = mapModel;
 		jQuery('.arrow').click(function () {
 			jQuery(this).toggleClass('active');
