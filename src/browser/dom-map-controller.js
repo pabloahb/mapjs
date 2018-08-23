@@ -426,7 +426,7 @@ module.exports = function DomMapController(mapModel, stageElement, touchEnabled,
 				mapModel.setNodeWidth('mouse', node.id, event.nodeWidth);
 			});
 		if (touchEnabled) {
-			element.on('press', function (evt) {
+			element.on('hold', function (evt) {
 				const realEvent = (evt.gesture && evt.gesture.srcEvent) || evt;
 				mapModel.clickNode(node.id, realEvent);
 				if (mapModel.requestContextMenu(evt.gesture.center.pageX, evt.gesture.center.pageY)) {
