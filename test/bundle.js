@@ -19023,7 +19023,7 @@ module.exports = function DomMapController(mapModel, stageElement, touchEnabled,
 					}
 				}
 			})
-			.on('contextmenu', function (event) {
+			.on('contextmenu hold', function (event) {
 				mapModel.selectNode(node.id);
 				if (mapModel.requestContextMenu(event.pageX, event.pageY)) {
 					event.preventDefault();
