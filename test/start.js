@@ -89,5 +89,7 @@ const MAPJS = require('../src/npm-main'),
 				}
 			}
 		});
+		var mapjsEvent=new CustomEvent("mapjsStarted");
+		document.dispatchEvent(mapjsEvent);
 	};
 document.addEventListener('DOMContentLoaded', init);

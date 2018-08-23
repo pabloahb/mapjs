@@ -25917,6 +25917,8 @@ const MAPJS = __webpack_require__(26),
 				}
 			}
 		});
+		var mapjsEvent=new CustomEvent("mapjsStarted");
+		document.dispatchEvent(mapjsEvent);
 	};
 document.addEventListener('DOMContentLoaded', init);
 
