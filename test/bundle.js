@@ -28528,7 +28528,6 @@ const MAPJS = __webpack_require__(27),
 		};
 		window.onerror = console.log;
 		window.jQuery = jQuery;
-		window.myHammer=myHammer;
 
 		container.domMapWidget(console, mapModel, touchEnabled);
 
