@@ -3,6 +3,7 @@ const MAPJS = require('../src/npm-main'),
 	jQuery = require('jquery'),
 	themeProvider = require('./theme'),
 	testMap = require('./example-map'),
+	myHammer= require('hammerjs');
 	content = MAPJS.content,
 	init = function () {
 		'use strict';
@@ -49,6 +50,7 @@ const MAPJS = require('../src/npm-main'),
 		};
 		window.onerror = console.log;
 		window.jQuery = jQuery;
+		window.myHammer=myHammer;
 
 		container.domMapWidget(console, mapModel, touchEnabled);
 
