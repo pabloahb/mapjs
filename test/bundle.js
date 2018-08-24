@@ -22197,6 +22197,8 @@ jQuery.fn.editNode = function (shouldSelectAll) {
 				textBox.trigger('keydown-complete');
 			},
 			attachListeners = function () {
+				
+				textBox[0].finishEditing=finishEditing;
 				textBox.on('blur', finishEditing).on('keydown', keyboardEvents);
 			},
 			detachListeners = function () {
