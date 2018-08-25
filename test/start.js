@@ -50,6 +50,7 @@ const MAPJS = require('../src/npm-main'),
 		};
 		window.onerror = console.log;
 		window.jQuery = jQuery;
+		mapModel.touchEnabled=touchEnabled;
 
 		container.domMapWidget(console, mapModel, touchEnabled);
 

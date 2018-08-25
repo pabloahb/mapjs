@@ -51,7 +51,7 @@ jQuery.fn.editNode = function (shouldSelectAll) {
 					TAB_KEY_CODE = 9,
 					S_KEY_CODE = 83,
 					Z_KEY_CODE = 90;
-				if (e.which === ENTER_KEY_CODE && !e.shiftKey) { // allow shift+enter to break lines
+				if ((e.which === ENTER_KEY_CODE && e.shiftKey && mapModel.touchEnabled) || (e.which === ENTER_KEY_CODE && !e.shiftKey && !mapModel.touchEnabled))  { 
 					finishEditing();
 					e.stopPropagation();
 				} else if (e.which === ESC_KEY_CODE) {

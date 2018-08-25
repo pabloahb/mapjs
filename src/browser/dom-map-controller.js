@@ -571,6 +571,7 @@ module.exports = function DomMapController(mapModel, stageElement, touchEnabled,
 				mapModel.setInputEnabled(true);
 				mapModel.updateTitle(nodeId, newText, editingNew);
 				editingElement.focus();
+				mapModel.dispatchEvent('nodeEditedFinish',nodeId,newText,editingNew);
 			})
 			.catch(function () {
 				mapModel.setInputEnabled(true);

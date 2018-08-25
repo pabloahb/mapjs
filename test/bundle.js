@@ -21861,6 +21861,8 @@ module.exports = function DomMapController(mapModel, stageElement, touchEnabled,
 				mapModel.setInputEnabled(true);
 				mapModel.updateTitle(nodeId, newText, editingNew);
 				editingElement.focus();
+				//var event= new Event('nodeEditedFinish');
+				mapModel.dispatchEvent('nodeEditedFinish',nodeId,newText,editingNew);
 			})
 			.catch(function () {
 				mapModel.setInputEnabled(true);
@@ -22178,7 +22180,7 @@ jQuery.fn.editNode = function (shouldSelectAll) {
 					TAB_KEY_CODE = 9,
 					S_KEY_CODE = 83,
 					Z_KEY_CODE = 90;
-				if (e.which === ENTER_KEY_CODE && !e.shiftKey) { // allow shift+enter to break lines
+				if ((e.which === ENTER_KEY_CODE && e.shiftKey && mapModel.touchEnabled) || (e.which === ENTER_KEY_CODE && !e.shiftKey && !mapModel.touchEnabled))  { 
 					finishEditing();
 					e.stopPropagation();
 				} else if (e.which === ESC_KEY_CODE) {
@@ -28530,6 +28532,7 @@ const MAPJS = __webpack_require__(27),
 		};
 		window.onerror = console.log;
 		window.jQuery = jQuery;
+		mapModel.touchEnabled=touchEnabled;
 
 		container.domMapWidget(console, mapModel, touchEnabled);
 
