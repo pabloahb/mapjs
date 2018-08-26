@@ -2,8 +2,7 @@
 const MAPJS = require('../src/npm-main'),
 	jQuery = require('jquery'),
 	themeProvider = require('./theme'),
-	testMap = require('./example-map'),
-	myHammer= require('hammerjs');
+	testMap = require('./example-map');
 	content = MAPJS.content,
 	init = function () {
 		'use strict';
