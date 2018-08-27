@@ -13,7 +13,7 @@ const MAPJS = require('../src/npm-main'),
 		}
 		else
 		{
-			myMap=testMap;
+			myMap={};
 		}
 		let domMapController = false;
 		const container = jQuery('#container'),
@@ -53,6 +53,12 @@ const MAPJS = require('../src/npm-main'),
 		window.onerror = console.log;
 		window.jQuery = jQuery;
 		mapModel.touchEnabled=touchEnabled;
+		mapModel.loadIdea= function (jsonIdea)
+		{
+			var myIdea=content(jsonIdea);
+			mapModel.setIdea(myIdea);
+
+		}
 
 		container.domMapWidget(console, mapModel, touchEnabled);
 
@@ -68,7 +74,13 @@ const MAPJS = require('../src/npm-main'),
 
 		jQuery('body').attachmentEditorWidget(mapModel);
 		layoutThemeStyle(themeJson);
-		mapModel.themeStyle=layoutThemeStyle;
+		mapModel.themeStyle= function (jsonTheme) {
+			layoutThemeStyle(jsonTheme);
+			mapModel.rebuildRequired();
+			mapModel.resetView();
+		
+		
+		};
 		mapModel.setIdea(idea);
 
 

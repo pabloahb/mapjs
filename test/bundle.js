@@ -25844,7 +25844,7 @@ const MAPJS = __webpack_require__(26),
 		}
 		else
 		{
-			myMap=testMap;
+			myMap={};
 		}
 		let domMapController = false;
 		const container = jQuery('#container'),
@@ -25884,6 +25884,12 @@ const MAPJS = __webpack_require__(26),
 		window.onerror = console.log;
 		window.jQuery = jQuery;
 		mapModel.touchEnabled=touchEnabled;
+		mapModel.loadIdea= function (jsonIdea)
+		{
+			var myIdea=content(jsonIdea);
+			mapModel.setIdea(myIdea);
+
+		}
 
 		container.domMapWidget(console, mapModel, touchEnabled);
 
@@ -25899,7 +25905,13 @@ const MAPJS = __webpack_require__(26),
 
 		jQuery('body').attachmentEditorWidget(mapModel);
 		layoutThemeStyle(themeJson);
-		mapModel.themeStyle=layoutThemeStyle;
+		mapModel.themeStyle= function (jsonTheme) {
+			layoutThemeStyle(jsonTheme);
+			mapModel.rebuildRequired();
+			mapModel.resetView();
+		
+		
+		};
 		mapModel.setIdea(idea);
 
 
