@@ -25,14 +25,17 @@ const MAPJS = require('../src/npm-main'),
 				if (!themeCSS) {
 					return false;
 				}
-
-				if (!window.themeCSS) {
-					jQuery('<style id="themeCSS" type="text/css"></style>').appendTo('head').text(themeCSS);
+				if (window.themeCSS)
+				{
+				delete window.themeCSS;
 				}
+				theme = new MAPJS.Theme(themeJson),
+				getTheme = () => theme;
+				jQuery('<style id="themeCSS" type="text/css"></style>').appendTo('head').text(themeCSS);
 				return true;
 			},
-			themeJson = themeProvider.default || MAPJS.defaultTheme,
-			theme = new MAPJS.Theme(themeJson),
+			themeJson = themeProvider.default || MAPJS.defaultTheme;
+			var theme = new MAPJS.Theme(themeJson),
 			getTheme = () => theme;
 
 		jQuery.fn.attachmentEditorWidget = function (mapModel) {
@@ -65,6 +68,7 @@ const MAPJS = require('../src/npm-main'),
 
 		jQuery('body').attachmentEditorWidget(mapModel);
 		layoutThemeStyle(themeJson);
+		mapModel.themeStyle=layoutThemeStyle;
 		mapModel.setIdea(idea);
 
 
