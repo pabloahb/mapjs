@@ -25864,8 +25864,16 @@ const MAPJS = __webpack_require__(26),
 				getTheme = () => theme;
 				jQuery('<style id="themeCSS" type="text/css"></style>').appendTo('head').text(themeCSS);
 				return true;
-			},
-			themeJson = themeProvider.default || MAPJS.defaultTheme;
+			};
+			var themeJson;
+			if(window.defaultTheme)
+			{
+				themeJson=window.defaultTheme;
+			}
+			else
+			{
+				themeJson=themeProvider.default || MAPJS.defaultTheme;
+			}
 			var theme = new MAPJS.Theme(themeJson),
 			getTheme = () => theme;
 
