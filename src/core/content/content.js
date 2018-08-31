@@ -955,7 +955,7 @@ module.exports = function content(contentAggregate, initialSessionId) {
 			ideaIdTo: ideaIdTo,
 			attr: {
 				style: {
-					color: '#707070',
+		
 					lineStyle: 'solid',
 					arrow: 'to'
 				}
