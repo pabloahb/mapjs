@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 110);
+/******/ 	return __webpack_require__(__webpack_require__.s = 111);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -12135,7 +12135,7 @@ return jQuery;
   }
 }());
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45), __webpack_require__(46)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46), __webpack_require__(47)(module)))
 
 /***/ }),
 /* 2 */
@@ -12404,7 +12404,7 @@ module.exports = {
 
 /*global require */
 const jQuery = __webpack_require__(0);
-__webpack_require__(55);
+__webpack_require__(56);
 jQuery.fn.getDataBox = function () {
 	'use strict';
 	const domShapeData = this.data();
@@ -12427,9 +12427,9 @@ jQuery.fn.getDataBox = function () {
 
 /*global module, require */
 const AUTO_COLOR = 'theme-auto-color',
-	themeFallbackValues = __webpack_require__(22),
-	themeToDictionary = __webpack_require__(106),
-	themeAttributeUtils = __webpack_require__(104),
+	themeFallbackValues = __webpack_require__(23),
+	themeToDictionary = __webpack_require__(107),
+	themeAttributeUtils = __webpack_require__(105),
 	defaultTheme = __webpack_require__(3);
 module.exports = function Theme(themeJson) {
 	'use strict';
@@ -12582,7 +12582,7 @@ module.exports = function convertPositionToTransform(cssPosition) {
 
 /*global require*/
 const $ = __webpack_require__(0),
-	Hammer = __webpack_require__(29),
+	Hammer = __webpack_require__(30),
 	onDrag = function (e) {
 		'use strict';
 		$(this).trigger(
@@ -12896,7 +12896,7 @@ function twoProduct(a, b, result) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
-const themeConnector = __webpack_require__(98);
+const themeConnector = __webpack_require__(99);
 __webpack_require__(4);
 module.exports = function buildConnection(element, optional) {
 	'use strict';
@@ -12962,6 +12962,30 @@ module.exports = function calcLabelCenterPoint(connectionPosition, toBox, d, lab
 
 /***/ }),
 /* 14 */
+/***/ (function(module, exports) {
+
+/*global module */
+module.exports = function MemoryClipboard() {
+	'use strict';
+	const self = this,
+		clone = function (something) {
+			if (!something) {
+				return undefined;
+			}
+			return JSON.parse(JSON.stringify(something));
+		};
+	let contents;
+	self.get = function () {
+		return clone(contents);
+	};
+	self.put = function (c) {
+		contents = clone(c);
+	};
+};
+
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, module */
@@ -12987,7 +13011,7 @@ module.exports = function nodeCacheMark(idea, optional) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
@@ -13053,7 +13077,7 @@ module.exports = updateConnectorText;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
@@ -13119,7 +13143,7 @@ module.exports = function contentUpgrade(content) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* global require, module */
@@ -13131,7 +13155,7 @@ module.exports = function isEmptyGroup(contentIdea) {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -13149,11 +13173,11 @@ module.exports = function isObjectObject(value) {
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
-const convertToRGB = __webpack_require__(20);
+const convertToRGB = __webpack_require__(21);
 module.exports = function colorParser(colorObj) {
 	'use strict';
 	if (!colorObj.color || colorObj.opacity === 0) {
@@ -13168,7 +13192,7 @@ module.exports = function colorParser(colorObj) {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
@@ -13207,7 +13231,7 @@ module.exports = function convertToRGB(colorString) {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, module */
@@ -13241,7 +13265,7 @@ const Theme = __webpack_require__ (5),
 			'L' + Math.round(a2x - offset.left) + ',' + Math.round(a2y - offset.top) +
 			'Z';
 	},
-	lineStyles = __webpack_require__(101),
+	lineStyles = __webpack_require__(102),
 	linkPath = function (parent, child, linkAttrArg, themeArg) {
 		'use strict';
 		const calculateConnector = function (parent, child) {
@@ -13351,12 +13375,12 @@ module.exports = linkPath;
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
 const defaultTheme = __webpack_require__(3),
-	deepFreeze = __webpack_require__(108),
+	deepFreeze = __webpack_require__(109),
 	firstNode = defaultTheme.node[0],
 	defaultConnector = defaultTheme.connector.default;
 
@@ -13388,7 +13412,7 @@ module.exports = deepFreeze({
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
@@ -13401,7 +13425,7 @@ module.exports = function connectorKey(connectorObj) {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
@@ -13413,7 +13437,7 @@ module.exports = function linkKey(linkObj) {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
@@ -13425,36 +13449,37 @@ module.exports = function (id) {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
 
-__webpack_require__(52);
-__webpack_require__(57);
+__webpack_require__(53);
 __webpack_require__(58);
+__webpack_require__(59);
 
 module.exports = {
-	MapModel: __webpack_require__(96),
-	content: __webpack_require__(73),
+	MemoryClipboard: __webpack_require__(14),
+	MapModel: __webpack_require__(97),
+	content: __webpack_require__(74),
 	observable: __webpack_require__(9),
-	DomMapController: __webpack_require__(51),
-	ThemeProcessor: __webpack_require__(105),
+	DomMapController: __webpack_require__(52),
+	ThemeProcessor: __webpack_require__(106),
 	Theme: __webpack_require__(5),
 	defaultTheme: __webpack_require__(3),
-	formatNoteToHtml: __webpack_require__(74),
+	formatNoteToHtml: __webpack_require__(75),
 	version: 4
 };
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = {}
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 /*global module */
@@ -13694,7 +13719,7 @@ module.exports.default =  {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! jQuery plugin for Hammer.JS - v1.1.3 - 2014-05-20
@@ -15934,7 +15959,7 @@ if(true) {
 module.exports = Hammer;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*** IMPORTS FROM imports-loader ***/
@@ -16148,7 +16173,7 @@ var jQuery = __webpack_require__(0);
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16156,7 +16181,7 @@ var jQuery = __webpack_require__(0);
 
 module.exports = monotoneConvexHull2D
 
-var orient = __webpack_require__(40)[3]
+var orient = __webpack_require__(41)[3]
 
 function monotoneConvexHull2D(points) {
   var n = points.length
@@ -16235,7 +16260,7 @@ function monotoneConvexHull2D(points) {
 }
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -16244,12 +16269,12 @@ function monotoneConvexHull2D(points) {
  * @preserve Project Home: https://github.com/voidqk/polybooljs
  */
 
-var BuildLog = __webpack_require__(33);
-var Epsilon = __webpack_require__(34);
-var Intersecter = __webpack_require__(36);
-var SegmentChainer = __webpack_require__(38);
-var SegmentSelector = __webpack_require__(39);
-var GeoJSON = __webpack_require__(35);
+var BuildLog = __webpack_require__(34);
+var Epsilon = __webpack_require__(35);
+var Intersecter = __webpack_require__(37);
+var SegmentChainer = __webpack_require__(39);
+var SegmentSelector = __webpack_require__(40);
+var GeoJSON = __webpack_require__(36);
 
 var buildLog = false;
 var epsilon = Epsilon();
@@ -16367,7 +16392,7 @@ module.exports = PolyBool;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 // (c) Copyright 2016, Sean Connelly (@voidqk), http://syntheti.cc
@@ -16486,7 +16511,7 @@ module.exports = BuildLog;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 // (c) Copyright 2016, Sean Connelly (@voidqk), http://syntheti.cc
@@ -16662,7 +16687,7 @@ module.exports = Epsilon;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports) {
 
 // (c) Copyright 2017, Sean Connelly (@voidqk), http://syntheti.cc
@@ -16856,7 +16881,7 @@ module.exports = GeoJSON;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // (c) Copyright 2016, Sean Connelly (@voidqk), http://syntheti.cc
@@ -16867,7 +16892,7 @@ module.exports = GeoJSON;
 // this is the core work-horse
 //
 
-var LinkedList = __webpack_require__(37);
+var LinkedList = __webpack_require__(38);
 
 function Intersecter(selfIntersection, eps, buildLog){
 	// selfIntersection is true/false depending on the phase of the overall algorithm
@@ -17367,7 +17392,7 @@ module.exports = Intersecter;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 // (c) Copyright 2016, Sean Connelly (@voidqk), http://syntheti.cc
@@ -17454,7 +17479,7 @@ module.exports = LinkedList;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports) {
 
 // (c) Copyright 2016, Sean Connelly (@voidqk), http://syntheti.cc
@@ -17712,7 +17737,7 @@ module.exports = SegmentChainer;
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 // (c) Copyright 2016, Sean Connelly (@voidqk), http://syntheti.cc
@@ -17884,16 +17909,16 @@ module.exports = SegmentSelector;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var twoProduct = __webpack_require__(11)
-var robustSum = __webpack_require__(43)
-var robustScale = __webpack_require__(41)
-var robustSubtract = __webpack_require__(42)
+var robustSum = __webpack_require__(44)
+var robustScale = __webpack_require__(42)
+var robustSubtract = __webpack_require__(43)
 
 var NUM_EXPAND = 5
 
@@ -18080,14 +18105,14 @@ function generateOrientationProc() {
 generateOrientationProc()
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var twoProduct = __webpack_require__(11)
-var twoSum = __webpack_require__(44)
+var twoSum = __webpack_require__(45)
 
 module.exports = scaleLinearExpansion
 
@@ -18136,7 +18161,7 @@ function scaleLinearExpansion(e, scale) {
 }
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18298,7 +18323,7 @@ function robustSubtract(e, f) {
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18460,7 +18485,7 @@ function linearExpansionSum(e, f) {
 }
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18483,7 +18508,7 @@ function fastTwoSum(a, b, result) {
 }
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 var g;
@@ -18510,7 +18535,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18538,13 +18563,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
 const jQuery = __webpack_require__(0),
 	createSVG = __webpack_require__(2),
-	connectorKey = __webpack_require__(23),
+	connectorKey = __webpack_require__(24),
 	buildConnection = __webpack_require__(12),
 	convertPositionToTransform = __webpack_require__(6);
 
@@ -18560,14 +18585,14 @@ jQuery.fn.createConnector = function (connector, optional) {
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
 const jQuery = __webpack_require__(0),
 	createSVG = __webpack_require__(2),
-	linkKey = __webpack_require__(24),
-	themeLink = __webpack_require__(21),
+	linkKey = __webpack_require__(25),
+	themeLink = __webpack_require__(22),
 	convertPositionToTransform = __webpack_require__(6);
 
 __webpack_require__(4);
@@ -18596,12 +18621,12 @@ jQuery.fn.createLink = function (l, optional) {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require*/
 const jQuery = __webpack_require__(0),
-	nodeKey = __webpack_require__(25);
+	nodeKey = __webpack_require__(26);
 jQuery.fn.createNode = function (node) {
 	'use strict';
 	return jQuery('<div>')
@@ -18619,7 +18644,7 @@ jQuery.fn.createNode = function (node) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -18636,30 +18661,30 @@ jQuery.fn.createReorderBounds = function () {
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, module*/
 const jQuery = __webpack_require__(0),
 	_ = __webpack_require__(1),
-	calculateLayout = __webpack_require__(79),
-	nodeCacheMark = __webpack_require__(14);
+	calculateLayout = __webpack_require__(80),
+	nodeCacheMark = __webpack_require__(15);
 
-__webpack_require__(49);
-__webpack_require__(7);
-__webpack_require__(59);
-__webpack_require__(65);
-__webpack_require__(66);
-__webpack_require__(60);
-__webpack_require__(67);
-__webpack_require__(69);
-__webpack_require__(62);
-__webpack_require__(53);
-__webpack_require__(68);
-__webpack_require__(47);
-__webpack_require__(48);
-__webpack_require__(54);
 __webpack_require__(50);
+__webpack_require__(7);
+__webpack_require__(60);
+__webpack_require__(66);
+__webpack_require__(67);
+__webpack_require__(61);
+__webpack_require__(68);
+__webpack_require__(70);
+__webpack_require__(63);
+__webpack_require__(54);
+__webpack_require__(69);
+__webpack_require__(48);
+__webpack_require__(49);
+__webpack_require__(55);
+__webpack_require__(51);
 
 
 
@@ -19245,7 +19270,7 @@ module.exports = function DomMapController(mapModel, stageElement, touchEnabled,
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, document, window */
@@ -19253,7 +19278,7 @@ const $ = __webpack_require__(0),
 	_ = __webpack_require__(1),
 	createSVG = __webpack_require__(2);
 
-__webpack_require__(30);
+__webpack_require__(31);
 
 $.fn.scrollWhenDragging = function (scrollPredicate) {
 	'use strict';
@@ -19474,15 +19499,15 @@ $.fn.domMapWidget = function (activityLog, mapModel, touchEnabled, dragContainer
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
 const jQuery = __webpack_require__(0);
 
-__webpack_require__(56);
-__webpack_require__(61);
-__webpack_require__(63);
+__webpack_require__(57);
+__webpack_require__(62);
+__webpack_require__(64);
 __webpack_require__(7);
 
 
@@ -19563,13 +19588,13 @@ jQuery.fn.editNode = function (shouldSelectAll) {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
 const jQuery = __webpack_require__(0),
-	connectorKey = __webpack_require__(23),
-	linkKey = __webpack_require__(24);
+	connectorKey = __webpack_require__(24),
+	linkKey = __webpack_require__(25);
 jQuery.fn.findLine = function (line) {
 	'use strict';
 	if (line && line.type === 'connector') {
@@ -19584,7 +19609,7 @@ jQuery.fn.findLine = function (line) {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -19606,7 +19631,7 @@ jQuery.fn.getBox = function () {
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -19627,7 +19652,7 @@ jQuery.fn.innerText = function () {
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -19675,7 +19700,7 @@ jQuery.fn.linkEditWidget = function (mapModel) {
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -19721,7 +19746,7 @@ jQuery.fn.mapToolbarWidget = function (mapModel) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require*/
@@ -19799,12 +19824,12 @@ jQuery.fn.nodeResizeWidget = function (nodeId, mapModel, stagePositionForPointEv
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require*/
 const jQuery = __webpack_require__(0),
-	nodeKey = __webpack_require__(25);
+	nodeKey = __webpack_require__(26);
 
 jQuery.fn.nodeWithId = function (id) {
 	'use strict';
@@ -19814,7 +19839,7 @@ jQuery.fn.nodeWithId = function (id) {
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, window, document */
@@ -19837,7 +19862,7 @@ jQuery.fn.placeCaretAtEnd = function () {
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, setTimeout */
@@ -19863,7 +19888,7 @@ jQuery.fn.queueFadeOut = function (theme) {
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, window, document */
@@ -19888,7 +19913,7 @@ jQuery.fn.selectAll = function () {
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -19914,7 +19939,7 @@ jQuery.fn.setThemeClassList = function (classList) {
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -19922,9 +19947,9 @@ jQuery.fn.setThemeClassList = function (classList) {
 const jQuery = __webpack_require__(0),
 	createSVG = __webpack_require__(2),
 	defaultTheme = __webpack_require__(3),
-	lineStrokes = __webpack_require__(100),
+	lineStrokes = __webpack_require__(101),
 	convertPositionToTransform = __webpack_require__(6),
-	updateConnectorText = __webpack_require__(15),
+	updateConnectorText = __webpack_require__(16),
 	calcLabelCenterPont = __webpack_require__(13),
 	buildConnection = __webpack_require__(12),
 	connectionIsUpdated = (element, connection, theme) => {
@@ -20003,15 +20028,15 @@ jQuery.fn.updateConnector = function (optional) {
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
 const jQuery = __webpack_require__(0),
 	createSVG = __webpack_require__(2),
 	convertPositionToTransform = __webpack_require__(6),
-	updateConnectorText = __webpack_require__(15),
-	themeLink = __webpack_require__(21),
+	updateConnectorText = __webpack_require__(16),
+	themeLink = __webpack_require__(22),
 	calcLabelCenterPont = __webpack_require__(13),
 	showArrows = function (connection, element) {
 		'use strict';
@@ -20108,19 +20133,19 @@ jQuery.fn.updateLink = function (optional) {
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
 const jQuery = __webpack_require__(0),
 	_ = __webpack_require__(1),
 	URLHelper = __webpack_require__(10),
-	formattedNodeTitle = __webpack_require__(75),
-	nodeCacheMark = __webpack_require__(14),
-	applyIdeaAttributesToNodeTheme = __webpack_require__(70),
-	calcMaxWidth = __webpack_require__(107);
+	formattedNodeTitle = __webpack_require__(76),
+	nodeCacheMark = __webpack_require__(15),
+	applyIdeaAttributesToNodeTheme = __webpack_require__(71),
+	calcMaxWidth = __webpack_require__(108);
 
-__webpack_require__(64);
+__webpack_require__(65);
 
 jQuery.fn.updateNodeContent = function (nodeContent, theme, optional) {
 	'use strict';
@@ -20409,7 +20434,7 @@ jQuery.fn.updateNodeContent = function (nodeContent, theme, optional) {
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -20439,7 +20464,7 @@ jQuery.fn.updateReorderBounds = function (border, box, dropCoords) {
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require */
@@ -20477,12 +20502,12 @@ jQuery.fn.updateStage = function () {
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
 
-const foregroundStyle = __webpack_require__(99);
+const foregroundStyle = __webpack_require__(100);
 module.exports = function applyIdeaAttributesToNodeTheme(idea, nodeTheme) {
 	'use strict';
 	if (!nodeTheme  || !idea || !idea.attr || !idea.attr.style) {
@@ -20543,13 +20568,13 @@ module.exports = function applyIdeaAttributesToNodeTheme(idea, nodeTheme) {
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
-const calcIdeaLevel = __webpack_require__(72),
+const calcIdeaLevel = __webpack_require__(73),
 	_ = __webpack_require__(1),
-	traverse = __webpack_require__(77),
+	traverse = __webpack_require__(78),
 	addSubIdea = (activeContent, themeObj, parentId, ideaTitle, optionalNewId, optionalIdeaAttr) => {
 		'use strict';
 		if (!themeObj) {
@@ -20676,7 +20701,7 @@ module.exports = {
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
@@ -20709,14 +20734,14 @@ module.exports = function calcIdeaLevel(contentIdea, nodeId, currentLevel) {
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*jshint loopfunc:true */
 /*global module, require*/
 const _ = __webpack_require__(1),
 	observable = __webpack_require__(9),
-	contentUpgrade = __webpack_require__(16);
+	contentUpgrade = __webpack_require__(17);
 module.exports = function content(contentAggregate, initialSessionId) {
 	'use strict';
 	let cachedId,
@@ -21828,7 +21853,7 @@ module.exports = function content(contentAggregate, initialSessionId) {
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* global module, require */
@@ -21848,7 +21873,7 @@ module.exports = function formatNoteToHtml(noteText) {
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
@@ -21888,7 +21913,7 @@ module.exports = function (nodeTitle, maxUrlLength) {
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 /*global module */
@@ -21924,11 +21949,11 @@ module.exports = function sortedSubIdeas(contentIdea) {
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
-const sortedSubIdeas = __webpack_require__(76);
+const sortedSubIdeas = __webpack_require__(77);
 module.exports = function traverse(contentIdea, iterator, postOrder, level) {
 	'use strict';
 	const isSingleRootMap = !level && (!contentIdea.formatVersion || contentIdea.formatVersion < 3);
@@ -21947,11 +21972,11 @@ module.exports = function traverse(contentIdea, iterator, postOrder, level) {
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
-const isObjectObject = __webpack_require__(18),
+const isObjectObject = __webpack_require__(19),
 	isNotRecursableObject = value => {
 		'use strict';
 		return !isObjectObject(value);
@@ -21982,19 +22007,19 @@ module.exports = function deepAssign() {
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
-const contentUpgrade = __webpack_require__(16),
+const contentUpgrade = __webpack_require__(17),
 	Theme = __webpack_require__(5),
-	extractConnectors = __webpack_require__(80),
-	extractLinks = __webpack_require__(81),
-	MultiRootLayout = __webpack_require__(84),
-	nodeAttributeUtils = __webpack_require__(85),
+	extractConnectors = __webpack_require__(81),
+	extractLinks = __webpack_require__(82),
+	MultiRootLayout = __webpack_require__(85),
+	nodeAttributeUtils = __webpack_require__(86),
 	defaultLayouts = {
-		'standard': __webpack_require__(87),
-		'top-down': __webpack_require__(91)
+		'standard': __webpack_require__(88),
+		'top-down': __webpack_require__(92)
 	},
 	formatResult = function (result, idea, theme, orientation) {
 		'use strict';
@@ -22034,7 +22059,7 @@ module.exports = function calculateLayout(idea, dimensionProvider, optional) {
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
@@ -22077,7 +22102,7 @@ module.exports = function extractConnectors(aggregate, visibleNodes, theme) {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
@@ -22101,13 +22126,13 @@ module.exports = function extractLinks(idea, visibleNodes) {
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
 const _ = __webpack_require__(1),
-	PolyBool = __webpack_require__(32),
-	convexHull = __webpack_require__(31),
+	PolyBool = __webpack_require__(33),
+	convexHull = __webpack_require__(32),
 	dotProduct = function (p1, p2) {
 		'use strict';
 		return (p1[0] * p2[0]) + (p1[1] * p2[1]);
@@ -22391,12 +22416,12 @@ module.exports = {
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
 const _ = __webpack_require__(1),
-	nodeToBox = __webpack_require__(86);
+	nodeToBox = __webpack_require__(87);
 
 module.exports = function LayoutModel(emptyLayout) {
 	'use strict';
@@ -22618,12 +22643,12 @@ module.exports = function LayoutModel(emptyLayout) {
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
 const _ = __webpack_require__(1),
-	layoutGeometry = __webpack_require__(82);
+	layoutGeometry = __webpack_require__(83);
 
 module.exports = function MultiRootLayout() {
 	'use strict';
@@ -22765,11 +22790,11 @@ module.exports = function MultiRootLayout() {
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
-const objectUtils = __webpack_require__(109),
+const objectUtils = __webpack_require__(110),
 	_ = __webpack_require__(1),
 	INHERIT_MARKER = 'theme_inherit',
 	inheritAttributeKeysFromParentNode = (parentNode, node, keysToInherit) => {
@@ -22840,7 +22865,7 @@ module.exports = {
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -22861,12 +22886,12 @@ module.exports = function nodeToBox(node) {
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
 const _ = __webpack_require__(1),
-	treeUtils = __webpack_require__(89);
+	treeUtils = __webpack_require__(90);
 module.exports  = function calculateStandardLayout(idea, dimensionProvider, margin) {
 	'use strict';
 	const positive = function (rank, parentId) {
@@ -22888,7 +22913,7 @@ module.exports  = function calculateStandardLayout(idea, dimensionProvider, marg
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, module*/
@@ -23036,13 +23061,13 @@ module.exports = {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
 const _ = __webpack_require__(1),
-	isEmptyGroup = __webpack_require__(17),
-	outlineUtils = __webpack_require__(88),
+	isEmptyGroup = __webpack_require__(18),
+	outlineUtils = __webpack_require__(89),
 	Tree = function (options) {
 		'use strict';
 		_.extend(this, options);
@@ -23203,13 +23228,13 @@ module.exports = {
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
 const _ = __webpack_require__(1),
-	compactedGroupWidth = __webpack_require__(93),
-	sortNodesByLeftPosition = __webpack_require__(94);
+	compactedGroupWidth = __webpack_require__(94),
+	sortNodesByLeftPosition = __webpack_require__(95);
 module.exports = function alignGroup(result, rootIdea, margin) {
 	'use strict';
 	if (!margin) {
@@ -23268,14 +23293,14 @@ module.exports = function alignGroup(result, rootIdea, margin) {
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
 const _ = __webpack_require__(1),
-	isEmptyGroup = __webpack_require__(17),
-	alignGroup = __webpack_require__(90),
-	combineVerticalSubtrees = __webpack_require__(92);
+	isEmptyGroup = __webpack_require__(18),
+	alignGroup = __webpack_require__(91),
+	combineVerticalSubtrees = __webpack_require__(93);
 module.exports  = function calculateTopDownLayout(aggregate, dimensionProvider, margin) {
 	'use strict';
 	const isGroup = function (node) {
@@ -23357,12 +23382,12 @@ module.exports  = function calculateTopDownLayout(aggregate, dimensionProvider, 
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
 const _ = __webpack_require__(1),
-	VerticalSubtreeCollection = __webpack_require__(95);
+	VerticalSubtreeCollection = __webpack_require__(96);
 module.exports = function combineVerticalSubtrees(node, childLayouts, margin, sameLevel) {
 	'use strict';
 	const result = {
@@ -23402,7 +23427,7 @@ module.exports = function combineVerticalSubtrees(node, childLayouts, margin, sa
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 /*global module */
@@ -23418,7 +23443,7 @@ module.exports = function compactedGroupWidth(nodeGroup, margin) {
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
 /*global module */
@@ -23432,7 +23457,7 @@ module.exports = function sortNodesByLeftPosition(nodes) {
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
@@ -23543,15 +23568,17 @@ module.exports = function VerticalSubtreeCollection(subtreeMap, marginArg) {
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, module */
 const _ = __webpack_require__(1),
-	LayoutModel = __webpack_require__(83),
-	observable = __webpack_require__(9);
+	LayoutModel = __webpack_require__(84),
+	observable = __webpack_require__(9)
+	MemoryClipboard = __webpack_require__(14);
 
-module.exports = function MapModel(selectAllTitles, defaultReorderMargin, optional) {
+
+module.exports = function MapModel(selectAllTitles, clipboardProvider, defaultReorderMargin, optional) {
 	'use strict';
 	let idea,
 		currentLabelGenerator,
@@ -23566,8 +23593,9 @@ module.exports = function MapModel(selectAllTitles, defaultReorderMargin, option
 		currentlySelectedIdeaId;
 
 	const self = this,
-		autoThemedIdeaUtils = (optional && optional.autoThemedIdeaUtils) || __webpack_require__(71),
+		autoThemedIdeaUtils = (optional && optional.autoThemedIdeaUtils) || __webpack_require__(72),
 		reorderMargin = (optional && optional.reorderMargin) || 20,
+		clipboard = clipboardProvider || new MemoryClipboard(),
 		layoutModel = (optional && optional.layoutModel) || new LayoutModel({nodes: {}, connectors: {}}),
 		setRootNodePositionsForPrecalculatedLayout = function (contextNode, specificLayout) {
 			const rootIdeas = Object.keys(idea.ideas).map(rank => idea.ideas[rank]),
@@ -24364,6 +24392,21 @@ module.exports = function MapModel(selectAllTitles, defaultReorderMargin, option
 			idea.moveRelative(currentlySelectedIdeaId, relativeMovement, options);
 		}
 	};
+		self.cut = function (source) {
+				const activeNodeIds = [], parents = [];
+				if (!isEditingEnabled) {
+					return false;
+				}
+				analytic('cut', source);
+				if (isInputEnabled) {
+					self.applyToActivated(function (nodeId) {
+						activeNodeIds.push(nodeId);
+						parents.push(idea.findParent(nodeId).id);
+					});
+					clipboard.put(idea.cloneMultiple(activeNodeIds));
+					idea.removeMultiple(activeNodeIds);
+				}
+			};
 	self.contextForNode = function (nodeId) {
 		const node = self.findIdeaById(nodeId),
 			hasChildren = node && node.ideas && _.size(node.ideas) > 0,
@@ -24372,12 +24415,14 @@ module.exports = function MapModel(selectAllTitles, defaultReorderMargin, option
 			hasPreferredWidth = node && node.attr && node.attr.style && node.attr.style.width,
 			hasPosition = node && node.attr && node.attr.position,
 			isCollapsed = node && node.getAttr('collapsed'),
+			canPaste = node && isEditingEnabled && clipboard && clipboard.get(),
 			isRoot = idea.isRootNode(nodeId);
 		if (node) {
 			return {
 				hasChildren: !!hasChildren,
 				hasSiblings: !!hasSiblings,
 				hasPreferredWidth: !!hasPreferredWidth,
+				canPaste: !!canPaste,
 				hasPreferredPosition: !!hasPosition,
 				notRoot: !isRoot,
 				notLastRoot: !isRoot || (rootCount > 1),
@@ -24389,6 +24434,47 @@ module.exports = function MapModel(selectAllTitles, defaultReorderMargin, option
 		}
 
 	};
+		self.copy = function (source) {
+				const activeNodeIds = [];
+				if (!isEditingEnabled) {
+					return false;
+				}
+				analytic('copy', source);
+				if (isInputEnabled) {
+					self.applyToActivated(function (node) {
+						activeNodeIds.push(node);
+					});
+					clipboard.put(idea.cloneMultiple(activeNodeIds));
+				}
+			};
+			self.paste = function (source) {
+				let result;
+				if (!isEditingEnabled) {
+					return false;
+				}
+				analytic('paste', source);
+				if (isInputEnabled) {
+					result = idea.pasteMultiple(currentlySelectedIdeaId, clipboard.get());
+					if (result && result[0]) {
+						self.selectNode(result[0]);
+					}
+				}
+				return result;
+			};
+			self.pasteStyle = function (source) {
+				const clipContents = clipboard.get();
+				let pastingStyle;
+				if (!isEditingEnabled) {
+					return false;
+				}
+				analytic('pasteStyle', source);
+				if (isInputEnabled && clipContents && clipContents[0]) {
+					pastingStyle = clipContents[0].attr && clipContents[0].attr.style;
+					self.applyToActivated(function (id) {
+						idea.updateAttr(id, 'style', pastingStyle);
+					});
+				}
+			};
 	self.getIcon = function (nodeId) {
 		const node = layoutModel.getNode(nodeId || currentlySelectedIdeaId);
 		if (!node) {
@@ -25033,7 +25119,7 @@ module.exports = function MapModel(selectAllTitles, defaultReorderMargin, option
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -25052,15 +25138,15 @@ module.exports = function calcChildPosition(parent, child, tolerance) {
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, module */
 const _ = __webpack_require__(1),
 	Theme = __webpack_require__ (5),
-	calcChildPosition = __webpack_require__(97),
-	lineTypes = __webpack_require__(102),
-	nodeConnectionPointX = __webpack_require__(103),
+	calcChildPosition = __webpack_require__(98),
+	lineTypes = __webpack_require__(103),
+	nodeConnectionPointX = __webpack_require__(104),
 	appendUnderLine = function (connectorCurve, calculatedConnector, position) {
 		'use strict';
 		if (calculatedConnector.nodeUnderline) {
@@ -25181,11 +25267,11 @@ module.exports = themePath;
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require */
-const convertToRGB = __webpack_require__(20);
+const convertToRGB = __webpack_require__(21);
 
 module.exports = function foregroundStyle(backgroundColor) {
 	'use strict';
@@ -25221,7 +25307,7 @@ module.exports = function foregroundStyle(backgroundColor) {
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports) {
 
 /*global module */
@@ -25232,7 +25318,7 @@ module.exports = {
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -25265,7 +25351,7 @@ module.exports = {
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -25436,7 +25522,7 @@ module.exports = {
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -25488,14 +25574,14 @@ module.exports = {
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
-const deepAssign = __webpack_require__(78),
-	colorParser = __webpack_require__(19),
-	isObjectObject = __webpack_require__(18),
-	themeFallbackValues = __webpack_require__(22),
+const deepAssign = __webpack_require__(79),
+	colorParser = __webpack_require__(20),
+	isObjectObject = __webpack_require__(19),
+	themeFallbackValues = __webpack_require__(23),
 	attributeForPath = function (object, pathArray, fallback) {
 		'use strict';
 		if (!object || !pathArray || !pathArray.length) {
@@ -25574,12 +25660,12 @@ module.exports = {
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module, require*/
 const _ = __webpack_require__(1),
-	colorParser = __webpack_require__(19);
+	colorParser = __webpack_require__(20);
 module.exports = function ThemeProcessor() {
 	'use strict';
 	const self = this,
@@ -25741,7 +25827,7 @@ module.exports = function ThemeProcessor() {
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -25761,7 +25847,7 @@ module.exports = function themeToDictionary(themeJson) {
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -25773,7 +25859,7 @@ module.exports = function calcMaxWidth(attr, nodeTheme/*, options*/) {
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -25798,7 +25884,7 @@ module.exports = deepFreeze;
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 /*global module*/
@@ -25873,14 +25959,14 @@ module.exports = {
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global require, document, window, console */
-const MAPJS = __webpack_require__(26),
+const MAPJS = __webpack_require__(27),
 	jQuery = __webpack_require__(0),
-	themeProvider = __webpack_require__(28),
-	testMap = __webpack_require__(27);
+	themeProvider = __webpack_require__(29),
+	testMap = __webpack_require__(28);
 	content = MAPJS.content,
 	init = function () {
 		'use strict';
