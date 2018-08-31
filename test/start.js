@@ -77,6 +77,7 @@ const MAPJS = require('../src/npm-main'),
 			undefined, // resourceTranslator
 			getTheme
 		);
+		jQuery('body').mapToolbarWidget(mapModel);
 		//jQuery('#themecss').themeCssWidget(themeProvider, new MAPJS.ThemeProcessor(), mapModel, domMapController);
 		// activityLog, mapModel, touchEnabled, imageInsertController, dragContainer, centerSelectedNodeOnOrientationChange
 

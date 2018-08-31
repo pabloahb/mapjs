@@ -2,6 +2,7 @@
 
 require('./browser/dom-map-widget');
 require('./browser/link-edit-widget');
+require('./browser/map-toolbar-widget');
 
 module.exports = {
 	MapModel: require('./core/map-model'),
