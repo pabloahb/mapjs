@@ -19245,6 +19245,7 @@ module.exports = function DomMapController(mapModel, stageElement, touchEnabled,
 					mapModel.undo('internal');
 				}
 				editingElement.focus();
+				mapModel.dispatchEvent('nodeEditedFinish',nodeId,newText,editingNew);
 			});
 		});
 	}
