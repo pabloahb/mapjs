@@ -158,17 +158,12 @@ $.fn.domMapWidget = function (activityLog, mapModel, touchEnabled, dragContainer
 		});
 		if (!touchEnabled) {
 			$(window).on('resize', function () {
-				mapModel.resetView();
+				mapModel.centerOnNode(mapModel.getSelectedNodeId());
 			});
 		}
 
 		$(window).on('orientationchange', function () {
-			if (centerSelectedNodeOnOrientationChange) {
-				mapModel.centerOnNode(mapModel.getSelectedNodeId());
-			} else {
-				mapModel.resetView();
-			}
-
+			mapModel.centerOnNode(mapModel.getSelectedNodeId());
 		});
 		$(document).on('keydown', function (e) {
 			const functions = {
